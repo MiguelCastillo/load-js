@@ -10,7 +10,7 @@
     global.loadJS = factory();
   }
 })(this, function() {
-  function loadScript(url) {
+  function loadScript(url, id) {
     var head   = document.getElementsByTagName("head")[0] || document.documentElement;
     var script = document.createElement("script");
 
@@ -18,6 +18,10 @@
     script.setAttribute("charset", "utf-8");
     script.setAttribute("type",    "text/javascript");
     script.setAttribute("src",     url);
+
+    if (id) {
+      script.id = id;
+    }
 
     //
     // Code from:
