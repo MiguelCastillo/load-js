@@ -1,4 +1,8 @@
 function createLoadJS() {
+  if (typeof document === "undefined" || typeof window === "undefined") {
+    return false;
+  }
+
   var cache = {};
   var head = document.getElementsByTagName("head")[0] || document.documentElement;
 
